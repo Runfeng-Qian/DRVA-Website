@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreams Rebuild Volunteers Association - Professional Design for Ukraine</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0057B7 0%, #FFD700 100%);
+            background-image: 
+                linear-gradient(135deg, rgba(0, 87, 183, 0.25) 0%, rgba(255, 215, 0, 0.25) 100%),
+                url('header_background.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 3rem 0 2rem 0;
+            text-align: center;
+        }
+
+        .logo-container {
+            margin-bottom: 0.5rem;
+        }
+
+        .logo-container img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        nav {
+            background: #333;
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #FFD700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.95;
+        }
+
+        h2 {
+            color: #0057B7;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: #0057B7;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .intro-banner {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .intro-banner h3 {
+            color: #0057B7;
+            margin-bottom: 1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-top: 4px solid #0057B7;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            color: #0057B7;
+            margin-bottom: 1rem;
+        }
+
+        .service-card ul {
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .service-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background: #FFF9E6;
+            border-left: 4px solid #FFD700;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .about-content {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            margin-bottom: 1rem;
+        }
+
+        .partners-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .partner-card {
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #0057B7;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .contact-info h3 {
+            color: #0057B7;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #0057B7;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background: #0057B7;
+            color: white;
+            padding: 12px 40px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .submit-button:hover {
+            background: #003d82;
+        }
+
+        .submit-button:disabled {
+            background: #6c8dba;
+            cursor: not-allowed;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .donate-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .donate-methods {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .donate-option {
+            text-align: center;
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .donate-button {
+            display: inline-block;
+            background: #0057B7;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+
+        .donate-button:hover {
+            background: #003d82;
+        }
+
+        .qr-code-container {
+            margin-top: 1rem;
+        }
+
+        .qr-code-container img {
+            max-width: 180px;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 7px;
+            padding: 9px;
+            background: white;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .insight-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .insight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .insight-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .insight-content {
+            padding: 1.5rem;
+        }
+
+        .insight-content h4 {
+            color: #0057B7;
+            margin-bottom: 0.5rem;
+        }
+
+        .insight-content p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .placeholder-image {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .donate-methods {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid,
+            .insights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Dreams Rebuild Volunteers Association Logo">
+        </div>
+        <h1>Architects of hope. Builders of tomorrow.</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#insights">News & Updates</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#donate">Support Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Introduction Banner -->
+        <div class="intro-banner">
+            <h3>Volunteer Architects & Engineers Rebuilding Ukraine</h3>
+            <p>Dreams Rebuild Volunteers Association brings together licensed architects, engineers, and construction professionals who donate their expertise to provide free, world-class architectural design services for Ukrainian families rebuilding their homes.</p>
+        </div>
+
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Professional Services We Provide</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🏗️ Custom Architectural Design</h3>
+                    <p>Professional residential design services donated by licensed architects:</p>
+                    <ul>
+                        <li><strong>Custom home designs</strong> tailored to each family's needs</li>
+                        <li>Single-family and multi-family residential plans</li>
+                        <li>Modern Ukrainian architectural style</li>
+                        <li>Energy-efficient and sustainable layouts</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>📐 Technical Documentation</h3>
+                    <p>Complete construction documentation prepared by professional engineers:</p>
+                    <ul>
+                        <li>Detailed architectural drawings</li>
+                        <li>Structural engineering specifications</li>
+                        <li>MEP systems design</li>
+                        <li>Full building code compliance</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>🔍 Construction Oversight</h3>
+                    <p>Quality control and technical support during construction:</p>
+                    <ul>
+                        <li>Construction phase consultation</li>
+                        <li>Design clarification services</li>
+                        <li>Quality inspections</li>
+                        <li><strong>Ensuring designs are properly executed</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>💝 All Services Provided Free of Charge</h3>
+                <p>Our volunteer professionals donate their time and expertise. Every family receives professional architectural services that would normally cost $15,000-$30,000—completely free. We believe every Ukrainian family deserves access to world-class design excellence.</p>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works">
+            <h2>How Our Integrated Program Works</h2>
+            <div class="about-content">
+                <h3>Complete Reconstruction Through Partnership</h3>
+                <p>Dreams Rebuild Volunteers Association is part of a unique three-organization partnership that provides comprehensive reconstruction support from design to completion:</p>
+                
+                <h3 style="margin-top: 2rem;">Step 1: Professional Design (DRVA)</h3>
+                <p>Our volunteer architects and engineers create custom, professional architectural designs tailored to each family's specific needs. All design services are provided completely free by licensed professionals who donate their expertise to Ukraine's reconstruction.</p>
+                
+                <h3 style="margin-top: 2rem;">Step 2: Financial Support (Dreams Realized Charity)</h3>
+                <p>Families in our program receive $5,000 USD or equivalent value in home essentials including appliances, textiles, and kitchen equipment. Military families and families of fallen heroes receive additional premium furniture packages.</p>
+                
+                <h3 style="margin-top: 2rem;">Step 3: Quality Construction (Sunwell Group)</h3>
+                <p>Sunwell Group provides high-quality building materials and professional construction crews to bring the designs to life. Projects are completed within 90-120 days using quality materials and experienced construction teams.</p>
+                
+                <h3 style="margin-top: 2rem;">Step 4: Ongoing Support</h3>
+                <p>Our volunteer architects provide construction oversight, design clarifications, and quality inspections to ensure designs are properly executed. Families can also participate in tourism homestay programs to generate additional income.</p>
+                
+                <div class="highlight-box" style="margin-top: 2rem;">
+                    <strong>Why an Integrated Approach?</strong><br>
+                    By working with all three organizations together, we ensure quality control throughout the entire reconstruction process. Professional design, adequate financial support, and quality construction combine to give families homes they can be proud of—built to EU standards and designed for the future.
+                </div>
+            </div>
+        </section>
+
+        <!-- Insights Section -->
+        <section id="insights">
+            <h2>News & Updates</h2>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <img src="reconstruction_funding.png" alt="World Bank funding reconstruction" class="insight-image">
+                    <div class="insight-content">
+                        <h4>Professional Volunteers Make a Difference</h4>
+                        <p>With Ukraine requiring $524 billion for reconstruction over the next decade, volunteer professionals are stepping up to donate their expertise. Construction Businesses, licensed architects and engineers from around the world are contributing design services that save reconstruction costs while ensuring quality and safety.</p>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <img src="housing_crisis.png" alt="Damaged buildings and housing crisis" class="insight-image">
+                    <div class="insight-content">
+                        <h4>Design Excellence for 2.5 Million Households</h4>
+                        <p>Over 2.5 million Ukrainian households need reconstruction support. Professional architectural services ensure that rebuilt homes meet modern EU standards for safety, energy efficiency, and durability. Volunteer architects are providing the design expertise that makes quality reconstruction possible.</p>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <img src="building_better.png" alt="Modern sustainable architecture" class="insight-image">
+                    <div class="insight-content">
+                        <h4>Building Back Better with Modern Design</h4>
+                        <p>Ukraine's reconstruction is an opportunity to modernize housing stock with professional architectural design. Volunteer architects are creating designs that combine Ukrainian cultural heritage with modern sustainability, energy efficiency, and European building standards—preparing Ukraine for EU accession.</p>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <img src="canada_ukraine_partnership.png" alt="Canada-Ukraine business partnership" class="insight-image">
+                    <div class="insight-content">
+                        <h4>International Professional Collaboration</h4>
+                        <p>The Canada-Ukraine Chamber of Commerce facilitates partnerships between Canadian architects, engineers, and Ukrainian reconstruction efforts. Professional volunteers contribute design expertise while building lasting relationships that support Ukraine's long-term recovery and development.</p>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <img src="displaced_families.png" alt="Families seeking shelter" class="insight-image">
+                    <div class="insight-content">
+                        <h4>Designing for Dignity and Accessibility</h4>
+                        <p>With 3.7 million internally displaced people, professional design services ensure that reconstruction prioritizes accessibility, family needs, and community resilience. Volunteer architects work directly with families to create homes that meet their specific requirements while maintaining high quality standards.</p>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <img src="rapid_construction.png" alt="Rapid modular construction" class="insight-image">
+                    <div class="insight-content">
+                        <h4>Efficient Design for Rapid Construction</h4>
+                        <p>Professional architectural planning enables 90-120 day construction timelines. Volunteer architects design with construction efficiency in mind, utilizing modular building techniques that combine standardized components with customization for each family's unique needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <h3>Our Mission</h3>
+                <p>Dreams Rebuild Volunteers Association (DRVA) was founded on a simple belief: every Ukrainian family deserves access to world-class architectural design services, regardless of their ability to pay. We bring together licensed architects, structural engineers, and construction professionals who volunteer their expertise to create beautiful, safe, and sustainable homes for Ukraine's future.</p>
+                
+                <h3 style="margin-top: 2rem;">Who We Are</h3>
+                <p>We are a network of professional volunteers—architects with decades of experience, young engineers eager to contribute their skills, and construction experts who understand how to design for efficiency and quality. Our volunteers come from Canada, the United States, Europe, and Ukraine itself, united by a commitment to Ukraine's reconstruction.</p>
+                
+                <h3 style="margin-top: 2rem;">Our Approach</h3>
+                <p>We've created an integrated partnership model that ensures families receive complete reconstruction support:</p>
+                <p><strong>Dreams Rebuild Volunteers Association</strong> provides professional architectural and engineering design services completely free of charge through our volunteer network.</p>
+                <p><strong>Dreams Realized Charity</strong> provides direct financial assistance and home essentials to families in our reconstruction program.</p>
+                <p><strong>Sunwell Group</strong> supplies quality building materials and manages construction with experienced crews, ensuring designs are properly executed.</p>
+                
+                <h3 style="margin-top: 2rem;">Our Standards</h3>
+                <p><strong>Professional Excellence:</strong> All designs are created by licensed architects and engineers with proven expertise.</p>
+                <p><strong>Cultural Sensitivity:</strong> We honor Ukrainian architectural heritage while embracing modern sustainability and efficiency.</p>
+                <p><strong>European Standards:</strong> Our designs comply with EU building codes, preparing Ukraine for accession.</p>
+                <p><strong>Family-Centered:</strong> We work directly with families to understand their needs and create personalized solutions.</p>
+                <p><strong>Sustainable Future:</strong> We design for energy efficiency, durability, and adaptability to future needs.</p>
+            </div>
+
+            <div class="partners-section">
+                <h3>Our Partner Organizations</h3>
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <h4>Canada-Ukraine Chamber of Commerce</h4>
+                        <p>Our primary coordination partner, facilitating Canadian professional support for Ukrainian reconstruction and enabling international volunteer collaboration.</p>
+                    </div>
+                    <div class="partner-card">
+                        <h4>Dreams Realized Charity</h4>
+                        <p>Provides direct financial assistance, home essentials, and support services to families receiving our design services.</p>
+                    </div>
+                    <div class="partner-card">
+                        <h4>Sunwell Group</h4>
+                        <p>Supplies building materials and professional construction management across four regional hubs in Ukraine to execute our designs with quality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donate Section -->
+        <section id="donate">
+            <h2>Support Our Work</h2>
+            <div class="donate-container">
+                <p style="font-size: 1.1rem; margin-bottom: 1rem;">While our volunteer professionals donate their expertise, we still need financial support for operational costs, technical tools, travel expenses for site visits, and coordination services that enable our volunteers to do their best work.</p>
+                <p style="margin-bottom: 2rem;">Your donation helps cover software licenses for design tools, travel costs for quality inspections, and operational expenses that keep our volunteer network running smoothly.</p>
+                
+                <div class="donate-methods">
+                    <div class="donate-option">
+                        <h3>💳 Online Donation</h3>
+                        <p>Click the button below to make a secure donation via Stripe</p>
+                        <a href="https://buy.stripe.com/eVq5kDg0K2rRaDZeh5aMU00" class="donate-button" target="_blank">Donate Now</a>
+                        <p style="font-size: 0.85rem; color: #666; margin-top: 1rem;">https://buy.stripe.com/eVq5kDg0K2rRaDZeh5aMU00</p>
+                    </div>
+                    
+                    <div class="donate-option">
+                        <h3>📱 Scan QR Code</h3>
+                        <p>Or scan the QR code with your mobile device to donate</p>
+                        <div class="qr-code-container">
+                            <img src="qr_code.png" alt="Donation QR Code">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="highlight-box" style="margin-top: 2rem;">
+                    <p style="text-align: center; font-size: 1.1rem;"><strong>Thank you for supporting our volunteers!</strong></p>
+                    <p style="text-align: center; margin-top: 0.5rem;">Your contribution enables professional architects and engineers to donate their expertise to rebuild Ukraine with excellence.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us & Join Our Volunteer Team</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="info-item">
+                        <strong>For Volunteer Applications:</strong>
+                        If you're a licensed architect, engineer, or construction professional interested in volunteering your expertise, we'd love to hear from you. Please include your professional credentials and areas of expertise in your message.
+                    </div>
+                    <div class="info-item">
+                        <strong>For General Inquiries:</strong>
+                        Questions about our design services, partnership opportunities, or reconstruction program? Contact us for more information.
+                    </div>
+                    <div class="info-item">
+                        <strong>Address:</strong>
+                        92 Upper Canada Dr<br>
+                        Toronto, Canada<br>
+                        M2P 1S4
+                    </div>
+                    <div class="info-item">
+                        <strong>Phone:</strong>
+                        (+1) 647 987 3362
+                    </div>
+                    <div class="info-item">
+                        <strong>Email:</strong>
+                        volunteers@drva-canada.org
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" name="name" placeholder="Your Name *" required>
+                    <input type="email" name="email" placeholder="Your Email *" required>
+                    <input type="tel" name="phone" placeholder="Phone Number">
+                    <input type="text" name="subject" placeholder="Subject (e.g., Volunteer Application, General Inquiry)">
+                    <textarea name="message" placeholder="Your Message * (For volunteer applications, please include your professional credentials and areas of expertise)" required></textarea>
+                    <button type="submit" class="submit-button">Send Message</button>
+                    <div class="form-message" id="formMessage"></div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Dreams Rebuild Volunteers Association. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">In partnership with Canada-Ukraine Chamber of Commerce, Dreams Realized Charity, and Sunwell Group</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const submitButton = form.querySelector('.submit-button');
+            const messageDiv = document.getElementById('formMessage');
+            
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+            messageDiv.style.display = 'none';
+            
+            try {
+                const response = await fetch('https://formspree.io/f/myzopwnj', {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    messageDiv.textContent = 'Thank you for your message! We will get back to you soon.';
+                    messageDiv.className = 'form-message success';
+                    messageDiv.style.display = 'block';
+                    form.reset();
+                } else {
+                    const data = await response.json();
+                    if (data.errors) {
+                        messageDiv.textContent = 'There was an error: ' + data.errors.map(error => error.message).join(', ');
+                    } else {
+                        messageDiv.textContent = 'Oops! There was a problem submitting your form. Please try again.';
+                    }
+                    messageDiv.className = 'form-message error';
+                    messageDiv.style.display = 'block';
+                }
+            } catch (error) {
+                messageDiv.textContent = 'There was a network error. Please check your connection and try again.';
+                messageDiv.className = 'form-message error';
+                messageDiv.style.display = 'block';
+            }
+            
+            submitButton.disabled = false;
+            submitButton.textContent = 'Send Message';
+        });
+    </script>
+</body>
+</html>
